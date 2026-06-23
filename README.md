@@ -4,16 +4,16 @@ Marvel Heroes Omega PCK sound silencer
 this tool enables silencing specific sounds such as repetitve voice lines .
 the default preset targets known "i cant do that" dialog .
 
-```00_MH_PCK_SoundSilencer.py``` is a minimal standalone tool , the only file  needed if you only want to mute those sounds , if your interested in the full PCK audio extraction and transcription , launch the dev_workflow .
+[`00_MH_PCK_SoundSilencer.py`](00_MH_PCK_SoundSilencer.py) is a minimal standalone tool , the only file  needed if you only want to mute those sounds , if your interested in the full PCK audio extraction and transcription , launch the dev_workflow .
 
-```01_dev_install_and_launch_workflow.py``` Parse, extract, modify, and transcribe Wwise `.pck` audio containers from Marvel Heroes Omega.  offline speech-to-text via Vosk, and a dashboard for voice-line search . the transciption is not always accurate but can be used to search for most common voice lines .
+[`01_dev_install_and_launch_workflow.py`](01_dev_install_and_launch_workflow.py) Parse, extract, modify, and transcribe Wwise `.pck` audio containers from Marvel Heroes Omega.  offline speech-to-text via Vosk, and a dashboard for voice-line search . the transciption is not always accurate but can be used to search for most common voice lines .
 
 ---
 
 ## Installation 
 
 - [Python 3.10+](https://www.python.org/downloads/)
-- Run `00_MH_PCK_SoundSilencer.py`.
+- Run [`00_MH_PCK_SoundSilencer.py`](00_MH_PCK_SoundSilencer.py).
 
 ### Dev workflow INSTALL
 
@@ -129,7 +129,7 @@ python -m pkg_bnk_wwise_tools dashboard extracted/project_pck_index.json
 python -m pkg_bnk_wwise_tools test input/SFX_ScarletWitch_INT.pck --to-ogg -v
 ```
 
-See `pkg_bnk_wwise_tools/CLI_main.py` or run with `--help` for full command reference.
+See [`pkg_bnk_wwise_tools/CLI_main.py`](pkg_bnk_wwise_tools/CLI_main.py) or run with `--help` for full command reference.
 
 ---
 
@@ -219,22 +219,22 @@ PCK_editor/
 
 | File | Purpose |
 |------|---------|
-| `00_MH_PCK_SoundSilencer.py` | Standalone sound silencer GUI (no external deps) |
-| `01_dev_install_and_launch_workflow.py` | Installer, launcher, and workflow GUI |
-| `pkg_bnk_wwise_tools/CLI_main.py` | Unified CLI entry point for all commands |
-| `pkg_bnk_wwise_tools/PARSE_pck_bnk.py` | `.pck` parser: AKPK header, BKHD, DIDX, DATA, loose WEM scanner |
-| `pkg_bnk_wwise_tools/CONVERT_wem.py` | WEM -> OGG pipeline using ww2ogg + revorb |
-| `pkg_bnk_wwise_tools/TRANSCRIBE_dialogue.py` | OGG -> WAV (ffmpeg) -> Vosk transcription |
-| `pkg_bnk_wwise_tools/TRANSCRIBE_sfx_classifier.py` | YAMNet / PANNs audio classification |
-| `pkg_bnk_wwise_tools/PROCESS_batch_pipeline.py` | Incremental resumable batch pipeline (extract / classify / transcribe / index) |
-| `pkg_bnk_wwise_tools/DATA_project_pck_index.py` | Aggregate `transcription.json` files across `.pck` files |
-| `pkg_bnk_wwise_tools/DATA_silence_manager.py` | JSON persistence for silence designations |
-| `pkg_bnk_wwise_tools/UI_transcription_dashboard.py` | tkinter GUI: search, filter, play audio |
-| `pkg_bnk_wwise_tools/MODIFY_repackager.py` | Replace/silence WEMs and rebuild `.pck` |
-| `pkg_bnk_wwise_tools/MODIFY_batch_silencer.py` | Batch silence designated WEMs in-place |
-| `pkg_bnk_wwise_tools/PCK_extract_named.py` | HIRC/STID named audio extraction |
-| `pkg_bnk_wwise_tools/UTIL_logger.py` | Coloured step-by-step terminal logging |
-| `pkg_bnk_wwise_tools/CONFIG_tools.py` | External tool path configuration |
+| [`00_MH_PCK_SoundSilencer.py`](00_MH_PCK_SoundSilencer.py) | Standalone sound silencer GUI (no external deps) |
+| [`01_dev_install_and_launch_workflow.py`](01_dev_install_and_launch_workflow.py) | Installer, launcher, and workflow GUI |
+| [`pkg_bnk_wwise_tools/CLI_main.py`](pkg_bnk_wwise_tools/CLI_main.py) | Unified CLI entry point for all commands |
+| [`pkg_bnk_wwise_tools/PARSE_pck_bnk.py`](pkg_bnk_wwise_tools/PARSE_pck_bnk.py) | `.pck` parser: AKPK header, BKHD, DIDX, DATA, loose WEM scanner |
+| [`pkg_bnk_wwise_tools/CONVERT_wem.py`](pkg_bnk_wwise_tools/CONVERT_wem.py) | WEM -> OGG pipeline using ww2ogg + revorb |
+| [`pkg_bnk_wwise_tools/TRANSCRIBE_dialogue.py`](pkg_bnk_wwise_tools/TRANSCRIBE_dialogue.py) | OGG -> WAV (ffmpeg) -> Vosk transcription |
+| [`pkg_bnk_wwise_tools/TRANSCRIBE_sfx_classifier.py`](pkg_bnk_wwise_tools/TRANSCRIBE_sfx_classifier.py) | YAMNet / PANNs audio classification |
+| [`pkg_bnk_wwise_tools/PROCESS_batch_pipeline.py`](pkg_bnk_wwise_tools/PROCESS_batch_pipeline.py) | Incremental resumable batch pipeline (extract / classify / transcribe / index) |
+| [`pkg_bnk_wwise_tools/DATA_project_pck_index.py`](pkg_bnk_wwise_tools/DATA_project_pck_index.py) | Aggregate `transcription.json` files across `.pck` files |
+| [`pkg_bnk_wwise_tools/DATA_silence_manager.py`](pkg_bnk_wwise_tools/DATA_silence_manager.py) | JSON persistence for silence designations |
+| [`pkg_bnk_wwise_tools/UI_transcription_dashboard.py`](pkg_bnk_wwise_tools/UI_transcription_dashboard.py) | tkinter GUI: search, filter, play audio |
+| [`pkg_bnk_wwise_tools/MODIFY_repackager.py`](pkg_bnk_wwise_tools/MODIFY_repackager.py) | Replace/silence WEMs and rebuild `.pck` |
+| [`pkg_bnk_wwise_tools/MODIFY_batch_silencer.py`](pkg_bnk_wwise_tools/MODIFY_batch_silencer.py) | Batch silence designated WEMs in-place |
+| [`pkg_bnk_wwise_tools/PCK_extract_named.py`](pkg_bnk_wwise_tools/PCK_extract_named.py) | HIRC/STID named audio extraction |
+| [`pkg_bnk_wwise_tools/UTIL_logger.py`](pkg_bnk_wwise_tools/UTIL_logger.py) | Coloured step-by-step terminal logging |
+| [`pkg_bnk_wwise_tools/CONFIG_tools.py`](pkg_bnk_wwise_tools/CONFIG_tools.py) | External tool path configuration |
 
 ---
 

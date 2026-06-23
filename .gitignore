@@ -8,3 +8,5 @@
 /extracted/*
 /input/*
 PCK_editor.code-workspace
+*/__pycache__/*
+/__pycache__/*
