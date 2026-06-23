@@ -1,10 +1,14 @@
 # MH PCK SoundSilencer
 Marvel Heroes Omega PCK sound silencer
 
+![Header](docs/MH_PCK_SoundSilencer_header.png)
+
 this tool enables silencing specific sounds such as repetitve voice lines .
 the default preset targets known "i cant do that" dialog .
 
 [`00_MH_PCK_SoundSilencer.py`](00_MH_PCK_SoundSilencer.py) is a minimal standalone tool , the only file  needed if you only want to mute those sounds , if your interested in the full PCK audio extraction and transcription , launch the dev_workflow .
+
+![UI](docs/MH_PCK_SoundSilencer_ui.png)
 
 [`01_dev_install_and_launch_workflow.py`](01_dev_install_and_launch_workflow.py) Parse, extract, modify, and transcribe Wwise `.pck` audio containers from Marvel Heroes Omega.  offline speech-to-text via Vosk, and a dashboard for voice-line search . the transciption is not always accurate but can be used to search for most common voice lines .
 
@@ -25,10 +29,9 @@ Run `01_dev_install_and_launch_workflow.bat`. It handles:
 4. Audio classification model setup
 5. Launching the tkinter workflow GUI
 
+ External Tools for Dev Workflow
 
-###  External Tools for Dev Workflow
-
-| Tool | Purpose |
+| Tool |  |
 |------|---------|
 | `ww2ogg.exe` | WEM -> OGG conversion |
 | `revorb.exe` | Fix Ogg page granule positions |
@@ -36,7 +39,7 @@ Run `01_dev_install_and_launch_workflow.bat`. It handles:
 
 ---
 
-## The Two Workflows
+## The Workflows
 
 ### Sound Silencer (Quick)
 
@@ -133,7 +136,7 @@ See [`pkg_bnk_wwise_tools/CLI_main.py`](pkg_bnk_wwise_tools/CLI_main.py) or run 
 
 ---
 
-## Technical Details
+## PCK Format Details
 
 Marvel Heroes `.pck` containers hold audio in two regions: an embedded BNK (with DIDX / DATA sections) followed by loose RIFF/WAVE files with no directory. The toolkit parses both.
 
