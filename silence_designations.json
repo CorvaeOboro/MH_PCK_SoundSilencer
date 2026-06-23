@@ -1,0 +1,42 @@
+{
+  "SFX_BlackWidow_INT": {
+    "001b1b71": "ON"
+  },
+  "SFX_Cable_INT": {
+    "002b709d": "ON"
+  },
+  "SFX_CaptainAmerica_INT": {
+    "00198b6b": "ON",
+    "00378af0": "ON"
+  },
+  "SFX_Colossus_INT": {
+    "00236a36": "ON"
+  },
+  "SFX_Cyclops_INT": {
+    "0011a887": "ON"
+  },
+  "SFX_Daredevil_INT": {
+    "00563107": "ON"
+  },
+  "SFX_InitialDownloadChunk_INT": {
+    "04dd9f05": "ON",
+    "06c7aebb": "ON",
+    "0b71c2ba": "ON",
+    "0c8c5d32": "ON",
+    "0d0cd477": "ON",
+    "114e23ff": "ON",
+    "1275d4a2": "ON"
+  },
+  "SFX_LukeCage_INT": {
+    "002cbe60": "ON"
+  },
+  "SFX_Psylocke_INT": {
+    "002e4143": "ON"
+  },
+  "SFX_Rogue_INT": {
+    "0026680a": "ON"
+  },
+  "SFX_SquirrelGirl_INT": {
+    "002acae5": "ON"
+  }
+}

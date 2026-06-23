@@ -1,0 +1,26 @@
+# MH PCK Editing Workflow - Python dependencies
+# this is only required for running the full pipeline of extraction , conversion , and transcription
+# Install with: pip install -r requirements.txt
+
+# Core toolkit (CLI, parsing, extraction, dashboard)
+# vosk is the offline transcription model , pygame to play audio in ui
+vosk>=0.3.45
+pygame>=2.5.0
+
+# Audio processing
+librosa>=0.10.0
+soundfile>=0.12.0
+numpy==1.26.4
+
+# Documentation diagram rendering 
+Pillow>=10.0.0
+
+# Audio classification - YAMNet (primary)
+# install manually after driver setup:
+#   pip install tensorflow[and-cuda]==2.15.0 tensorflow-hub
+# For CPU-only (default):
+# tensorflow==2.15.0
+# tensorflow-hub==0.16.1
+
+# Audio classification - PANNs (optional, secondary)
+# torch>=2.0.0
