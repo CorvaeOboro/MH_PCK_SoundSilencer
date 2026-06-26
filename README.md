@@ -1,7 +1,10 @@
 # MH PCK SoundSilencer
-Marvel Heroes Omega PCK sound silencer
 
 ![Header](docs/MH_PCK_SoundSilencer_header.png)
+
+Marvel Heroes Omega PCK sound silencer
+
+| [DOWNLOAD](https://github.com/CorvaeOboro/MH_PCK_SoundSilencer/archive/refs/heads/main.zip) | [VIEW OTHER MODS](https://corvaeoboro.github.io/MHServerEmu/) |
 
 this tool enables silencing specific sounds such as repetitve voice lines .
 the default preset targets known "i cant do that" dialog .
@@ -9,6 +12,22 @@ the default preset targets known "i cant do that" dialog .
 [`00_MH_PCK_SoundSilencer.py`](00_MH_PCK_SoundSilencer.py) is a minimal standalone tool , the only file  needed if you only want to mute those sounds , if your interested in the full PCK audio extraction and transcription , launch the dev_workflow .
 
 ![UI](docs/MH_PCK_SoundSilencer_ui.png)
+
+<table>
+<tr><th>PCK</th><th>WEM ID</th></tr>
+<tr><td><code>SFX_Cable_INT</code></td><td><code>002b709d</code></td></tr>
+<tr><td><code>SFX_CaptainAmerica_INT</code></td><td><code>00198b6b</code>, <code>00378af0</code></td></tr>
+<tr><td><code>SFX_BlackWidow_INT</code></td><td><code>001b1b71</code></td></tr>
+<tr><td><code>SFX_Colossus_INT</code></td><td><code>00236a36</code></td></tr>
+<tr><td><code>SFX_Cyclops_INT</code></td><td><code>0011a887</code></td></tr>
+<tr><td><code>SFX_Daredevil_INT</code></td><td><code>00563107</code></td></tr>
+<tr><td><code>SFX_InitialDownloadChunk_INT</code></td><td><code>04dd9f05</code>, <code>06c7aebb</code>, <code>0b71c2ba</code>, <code>0c8c5d32</code>, <code>0d0cd477</code>, <code>1275d4a2</code>, <code>114e23ff</code></td></tr>
+<tr><td><code>SFX_LukeCage_INT</code></td><td><code>002cbe60</code></td></tr>
+<tr><td><code>SFX_Psylocke_INT</code></td><td><code>002e4143</code></td></tr>
+<tr><td><code>SFX_Rogue_INT</code></td><td><code>0026680a</code></td></tr>
+<tr><td><code>SFX_SquirrelGirl_INT</code></td><td><code>002acae5</code></td></tr>
+</table>
+
 
 [`01_dev_install_and_launch_workflow.py`](01_dev_install_and_launch_workflow.py) Parse, extract, modify, and transcribe Wwise `.pck` audio containers from Marvel Heroes Omega.  offline speech-to-text via Vosk, and a dashboard for voice-line search . the transciption is not always accurate but can be used to search for most common voice lines .
 
