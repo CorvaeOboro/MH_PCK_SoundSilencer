@@ -1,42 +1,172 @@
 {
+  "SFX_Angela_INT": {
+    "00225854": { "state": "ON", "character": "angela", "transcription": "i will not allow it" }
+  },
+  "SFX_Beast_INT": {
+    "0052031e": { "state": "ON", "character": "beast", "transcription": "i'm afraid that's beyond my capabilities" }
+  },
+  "SFX_BlackCat_INT": {
+    "0033b3ba": { "state": "ON", "character": "black cat", "transcription": "i'd rather not" }
+  },
+  "SFX_BlackPanther_INT": {
+    "0029d467": { "state": "ON", "character": "black panther", "transcription": "that cannot be done" },
+    "0014df6f": { "state": "OFF", "character": "black panther", "transcription": "unfortunate but no i cannot do that", "note": "possible 2nd refusal variant - listen verify" }
+  },
   "SFX_BlackWidow_INT": {
-    "001b1b71": "ON"
+    "001b1b71": { "state": "ON", "character": "black widow", "transcription": "you can't do that" }
   },
   "SFX_Cable_INT": {
-    "002b709d": "ON"
+    "002b709d": { "state": "ON", "character": "cable", "transcription": "sorry can't do that" }
   },
   "SFX_CaptainAmerica_INT": {
-    "00198b6b": "ON",
-    "00378af0": "ON"
+    "00198b6b": { "state": "ON", "character": "captain america", "transcription": "sorry can't do it" },
+    "00378af0": { "state": "ON", "character": "captain america", "transcription": "i can't do that" }
   },
   "SFX_Colossus_INT": {
-    "00236a36": "ON"
+    "00236a36": { "state": "ON", "character": "colossus", "transcription": "i can't do that comrade" }
   },
   "SFX_Cyclops_INT": {
-    "0011a887": "ON"
+    "0011a887": { "state": "ON", "character": "cyclops", "transcription": "sorry i can't do that" }
   },
   "SFX_Daredevil_INT": {
-    "00563107": "ON"
+    "00563107": { "state": "ON", "character": "daredevil", "transcription": "i can't do that" },
+    "00266f8a": { "state": "ON", "character": "daredevil", "transcription": "i'm good but not that good" }
+  },
+  "SFX_DoctorStrange_INT": {
+    "001c3f15": { "state": "ON", "character": "doctor strange", "transcription": "impossible even for a sorcerer" }
+  },
+  "SFX_DrDoom_INT": {
+    "0066552e": { "state": "ON", "character": "dr doom", "transcription": "some things are beyond even mighty doom" }
+  },
+  "SFX_Elektra_INT": {
+    "0038e182": { "state": "ON", "character": "elektra", "transcription": "you couldn't pay me to do that" }
+  },
+  "SFX_EmmaFrost_INT": {
+    "00251cfc": { "state": "ON", "character": "emma frost", "transcription": "i don't think so" }
+  },
+  "SFX_Gambit_INT": {
+    "00713ca2": { "state": "ON", "character": "gambit", "transcription": "no can do mon ami" }
+  },
+  "SFX_GhostRider_INT": {
+    "00acced8": { "state": "OFF", "character": "ghost rider", "transcription": "can i do that", "note": "candidate - heard 'i can not do that', voice distortion ; alt SFX_InitialDownloadChunk_INT:080e44f8" }
+  },
+  "SFX_Hawkeye_INT": {
+    "001797cf": { "state": "ON", "character": "hawkeye", "transcription": "okay that's impossible even for me" }
+  },
+  "SFX_Hulk_INT": {
+    "0019719f": { "state": "ON", "character": "hulk", "transcription": "not a chance" },
+    "0051c7e6": { "state": "OFF", "character": "hulk", "transcription": "no chance", "note": "possible refusal variant - listen verify" }
+  },
+  "SFX_Iceman_INT": {
+    "003ee0fc": { "state": "ON", "character": "iceman", "transcription": "not cool man" }
   },
   "SFX_InitialDownloadChunk_INT": {
-    "04dd9f05": "ON",
-    "06c7aebb": "ON",
-    "0b71c2ba": "ON",
-    "0c8c5d32": "ON",
-    "0d0cd477": "ON",
-    "114e23ff": "ON",
-    "1275d4a2": "ON"
+    "04dd9f05": { "state": "ON", "character": "unknown", "transcription": "i can't do that" },
+    "06c7aebb": { "state": "ON", "character": "unknown", "transcription": "yeah i can't do that" },
+    "0b71c2ba": { "state": "ON", "character": "unknown", "transcription": "i can't do that" },
+    "0c8c5d32": { "state": "ON", "character": "unknown", "transcription": "i can't do that" },
+    "0d0cd477": { "state": "ON", "character": "unknown", "transcription": "i can't do that" },
+    "114e23ff": { "state": "ON", "character": "unknown", "transcription": "yeah you're our jaw", "note": "vosk mistranscription of a refusal line" },
+    "1275d4a2": { "state": "ON", "character": "unknown", "transcription": "i can't do that" },
+    "05660b85": { "state": "ON", "character": "antman", "transcription": "the ant can't" },
+    "0cdfad9f": { "state": "ON", "character": "carnage", "transcription": "i may be a hero but i can't do everything" },
+    "089ad5ea": { "state": "ON", "character": "deadpool", "transcription": "hey i'm good but even i can't do that" },
+    "11a8fcb3": { "state": "ON", "character": "juggernaut", "transcription": "no even i won't do that" },
+    "126e11a1": { "state": "ON", "character": "thor", "transcription": "nay only a fool would do that" },
+    "0e1c9d7b": { "state": "ON", "character": "wolverine", "transcription": "tell me you're not serious about that" },
+    "07735319": { "state": "OFF", "character": "blade or green goblin", "transcription": "not on your life", "note": "candidate - one of 3 identical lines" },
+    "08804b62": { "state": "OFF", "character": "blade or green goblin", "transcription": "not on your life", "note": "candidate - one of 3 identical lines" },
+    "121c80b5": { "state": "OFF", "character": "blade / green goblin / other hero", "transcription": "not on your life", "note": "candidate - one of 3 identical lines" },
+    "061d377c": { "state": "OFF", "character": "spiderman", "transcription": "yeah i don't think so", "note": "candidate - one of 3 identical lines" },
+    "0936a62e": { "state": "OFF", "character": "spiderman", "transcription": "yeah i don't think so", "note": "candidate - one of 3 identical lines" },
+    "113131e8": { "state": "OFF", "character": "spiderman", "transcription": "yeah i don't think so", "note": "candidate - one of 3 identical lines" },
+    "0cc1fe67": { "state": "OFF", "character": "rocket raccoon", "transcription": "not gonna happen", "note": "candidate - one of 2 identical lines" },
+    "11705844": { "state": "OFF", "character": "rocket raccoon", "transcription": "not gonna happen", "note": "candidate - one of 2 identical lines" },
+    "101ddd8f": { "state": "OFF", "character": "nova or punisher", "transcription": "no can do", "note": "candidate" },
+    "0fbd4e6e": { "state": "OFF", "character": "punisher or war machine dup", "transcription": "sorry no can do", "note": "candidate" },
+    "080e44f8": { "state": "OFF", "character": "ghost rider or x-23", "transcription": "yea i cannot do that", "note": "candidate" },
+    "12abbedf": { "state": "OFF", "character": "juggernaut?", "transcription": "no even i will do that", "note": "candidate - possible vosk 'won't'->'will' error" },
+    "0e25d83d": { "state": "OFF", "character": "captain marvel?", "transcription": "how about a different idea", "note": "candidate - dup of SFX_MsMarvel_INT:00350dec" },
+    "11579f90": { "state": "OFF", "character": "emma frost?", "transcription": "i don't think so", "note": "candidate - dup of SFX_EmmaFrost_INT:00251cfc" },
+    "0baf686f": { "state": "OFF", "character": "venom?", "transcription": "i never", "note": "weak candidate - heard 'no never', voice distortion" }
+  },
+  "SFX_IronFist_INT": {
+    "0046b4dd": { "state": "ON", "character": "iron fist", "transcription": "but it is forbidden" }
+  },
+  "SFX_IronMan_INT": {
+    "003aa332": { "state": "ON", "character": "ironman", "transcription": "sorry not happening" }
+  },
+  "SFX_KittyPryde_INT": {
+    "005ec494": { "state": "ON", "character": "kitty pryde", "transcription": "no way jose" }
+  },
+  "SFX_Loki_INT": {
+    "0093268f": { "state": "ON", "character": "loki", "transcription": "you ask the impossible" },
+    "00a7788b": { "state": "ON", "character": "loki", "transcription": "would you have me attack blindly" },
+    "002c9a6f": { "state": "ON", "character": "loki", "transcription": "i must gather my wits" },
+    "006bfea0": { "state": "OFF", "character": "loki", "transcription": "not on your life", "note": "possible 4th refusal variant - listen verify" }
   },
   "SFX_LukeCage_INT": {
-    "002cbe60": "ON"
+    "002cbe60": { "state": "ON", "character": "luke cage", "transcription": "no way can't be done" }
+  },
+  "SFX_Magik_INT": {
+    "0005b3b0": { "state": "OFF", "character": "magik", "transcription": "no", "note": "weak candidate - heard 'nyet'" },
+    "003c0782": { "state": "OFF", "character": "magik", "transcription": "and yet", "note": "weak candidate - heard 'nyet'" }
+  },
+  "SFX_Magneto_INT": {
+    "003ac5fd": { "state": "ON", "character": "magneto", "transcription": "not on this day" }
+  },
+  "SFX_MoonKnight_INT": {
+    "0048b890": { "state": "ON", "character": "moon knight", "transcription": "that it'll never work" }
+  },
+  "SFX_MsMarvel_INT": {
+    "00350dec": { "state": "ON", "character": "captain marvel", "transcription": "how about a different idea" }
+  },
+  "SFX_NickFury_INT": {
+    "005032dc": { "state": "ON", "character": "nick fury", "transcription": "you must be out of your mind" }
+  },
+  "SFX_Nightcrawler_INT": {
+    "00227212": { "state": "ON", "character": "nightcrawler", "transcription": "i'm afraid i cannot do that" }
   },
   "SFX_Psylocke_INT": {
-    "002e4143": "ON"
+    "002e4143": { "state": "ON", "character": "psylocke", "transcription": "you can't do that" }
   },
   "SFX_Rogue_INT": {
-    "0026680a": "ON"
+    "0026680a": { "state": "ON", "character": "rogue", "transcription": "not on your life sugar" }
+  },
+  "SFX_SheHulk_INT": {
+    "0053a84a": { "state": "ON", "character": "she-hulk", "transcription": "not on your life buster" }
   },
   "SFX_SquirrelGirl_INT": {
-    "002acae5": "ON"
+    "002acae5": { "state": "ON", "character": "squirrel girl", "transcription": "oh gosh i can't do that" }
+  },
+  "SFX_Starlord_INT": {
+    "001a3c18": { "state": "ON", "character": "star-lord", "transcription": "not today" }
+  },
+  "SFX_Storm_INT": {
+    "00338bf4": { "state": "ON", "character": "storm", "transcription": "i cannot do that" }
+  },
+  "SFX_Taskmaster_INT": {
+    "000afcab": { "state": "ON", "character": "taskmaster", "transcription": "ah not happening" }
+  },
+  "SFX_Teamups_INT": {
+    "040fbc57": { "state": "OFF", "character": "spiderman?", "transcription": "yeah i don't think so", "note": "candidate - likely teamup context" }
+  },
+  "SFX_Ultron_INT": {
+    "00161876": { "state": "ON", "character": "ultron", "transcription": "warning logic error" }
+  },
+  "SFX_Venom_INT": {
+    "000762fd": { "state": "OFF", "character": "venom", "transcription": "none", "note": "weak candidate - heard 'no never', voice distortion" }
+  },
+  "SFX_Vision_INT": {
+    "0055406b": { "state": "ON", "character": "vision", "transcription": "syntax error" }
+  },
+  "SFX_WarMachine_INT": {
+    "00235bb9": { "state": "ON", "character": "war machine", "transcription": "sorry no can do" }
+  },
+  "SFX_WinterSoldier_INT": {
+    "0026d84e": { "state": "ON", "character": "winter soldier", "transcription": "you can't do that" }
+  },
+  "SFX_X23_INT": {
+    "002c8a20": { "state": "OFF", "character": "x-23", "transcription": "you cannot do that", "note": "candidate - heard 'i can not do that'" }
   }
 }

@@ -39,20 +39,55 @@ from typing import Dict, List, Optional, Tuple
 # "I can't do that" voice lines .
 # ---------------------------------------------------------------------------
 PRESET: Dict[str, List[str]] = {
+    "SFX_Angela_INT":               ["00225854"],
+    "SFX_Beast_INT":                ["0052031e"],
+    "SFX_BlackCat_INT":             ["0033b3ba"],
+    "SFX_BlackPanther_INT":         ["0029d467"],
+    "SFX_BlackWidow_INT":           ["001b1b71"],
     "SFX_Cable_INT":                ["002b709d"],
     "SFX_CaptainAmerica_INT":       ["00198b6b", "00378af0"],
-    "SFX_BlackWidow_INT":           ["001b1b71"],
     "SFX_Colossus_INT":             ["00236a36"],
     "SFX_Cyclops_INT":              ["0011a887"],
-    "SFX_Daredevil_INT":            ["00563107"],
+    "SFX_Daredevil_INT":            ["00563107", "00266f8a"],
+    "SFX_DoctorStrange_INT":        ["001c3f15"],
+    "SFX_DrDoom_INT":               ["0066552e"],
+    "SFX_Elektra_INT":              ["0038e182"],
+    "SFX_EmmaFrost_INT":            ["00251cfc"],
+    "SFX_Gambit_INT":               ["00713ca2"],
+    "SFX_Hawkeye_INT":              ["001797cf"],
+    "SFX_Hulk_INT":                 ["0019719f"],
+    "SFX_Iceman_INT":               ["003ee0fc"],
     "SFX_InitialDownloadChunk_INT": [
         "04dd9f05", "06c7aebb", "0b71c2ba", "0c8c5d32",
         "0d0cd477", "1275d4a2", "114e23ff",
+        "05660b85",  # antman "the ant can't"
+        "0cdfad9f",  # carnage "i may be a hero but i can't do everything"
+        "089ad5ea",  # deadpool "hey i'm good but even i can't do that"
+        "11a8fcb3",  # juggernaut "no even i won't do that"
+        "126e11a1",  # thor "nay only a fool would do that"
+        "0e1c9d7b",  # wolverine "tell me you're not serious about that"
     ],
+    "SFX_IronFist_INT":             ["0046b4dd"],
+    "SFX_IronMan_INT":              ["003aa332"],
+    "SFX_KittyPryde_INT":           ["005ec494"],
+    "SFX_Loki_INT":                 ["0093268f", "00a7788b", "002c9a6f"],
     "SFX_LukeCage_INT":             ["002cbe60"],
+    "SFX_Magneto_INT":              ["003ac5fd"],
+    "SFX_MoonKnight_INT":           ["0048b890"],
+    "SFX_MsMarvel_INT":             ["00350dec"],  # captain marvel
+    "SFX_NickFury_INT":             ["005032dc"],
+    "SFX_Nightcrawler_INT":         ["00227212"],
     "SFX_Psylocke_INT":             ["002e4143"],
     "SFX_Rogue_INT":                ["0026680a"],
+    "SFX_SheHulk_INT":              ["0053a84a"],
     "SFX_SquirrelGirl_INT":         ["002acae5"],
+    "SFX_Starlord_INT":             ["001a3c18"],
+    "SFX_Storm_INT":                ["00338bf4"],
+    "SFX_Taskmaster_INT":           ["000afcab"],
+    "SFX_Ultron_INT":               ["00161876"],
+    "SFX_Vision_INT":               ["0055406b"],
+    "SFX_WarMachine_INT":           ["00235bb9"],
+    "SFX_WinterSoldier_INT":        ["0026d84e"],
 }
 
 # ---------------------------------------------------------------------------
@@ -189,7 +224,21 @@ def zero_fill_riff(buf: bytearray, start: int, length: int) -> bool:
 
 
 # ---------------------------------------------------------------------------
+# Designation state check: a wem value in silence_designations.json may be
+# the legacy "ON" string or an enriched object {state, character, transcription, note}
+# ---------------------------------------------------------------------------
+def designation_is_on(val) -> bool:
+    if isinstance(val, str):
+        return val.upper() == "ON"
+    if isinstance(val, dict):
+        return str(val.get("state", "ON")).upper() == "ON"
+    return False
+
+
+# ---------------------------------------------------------------------------
 # Preset loading: built-in dict or external silence_designations.json
+# Supports both the SilenceManager format ({"designations": [...]}) and the
+# simple grouped format ({"PACK": {"wem_id": "ON" | {...}}}).
 # ---------------------------------------------------------------------------
 def load_external_preset(path: Path) -> Dict[str, List[str]]:
     raw = json.loads(path.read_text(encoding="utf-8"))
@@ -199,6 +248,12 @@ def load_external_preset(path: Path) -> Dict[str, List[str]]:
         wem_id = item.get("wem_id")
         if pack and wem_id:
             groups.setdefault(pack, []).append(str(wem_id).lower())
+    for pack, wems in raw.items():
+        if not isinstance(wems, dict):
+            continue
+        for wid, val in wems.items():
+            if designation_is_on(val):
+                groups.setdefault(pack, []).append(str(wid).lower())
     return groups
 
 
@@ -322,6 +377,7 @@ def launch_gui() -> int:
             self.entries: List[dict] = []        # rows from project_pck_index.json
             self.filtered: List[dict] = []       # currently shown rows
             self.marked: Dict[str, bool] = {}    # key "pck::filename" -> will silence
+            self.designation_meta: Dict[str, dict] = {}  # key "pck::wem_id" -> loaded enrichment
 
             master.title("MH PCK Sound Silencer")
             master.geometry("1100x720")
@@ -636,14 +692,24 @@ def launch_gui() -> int:
                 initialfile="silence_designations.json")
             if not path:
                 return
-            output: Dict[str, Dict[str, str]] = {}
+            output: Dict[str, Dict[str, dict]] = {}
             for e in self.entries:
                 if not self.marked.get(self._key(e), False):
                     continue
                 pck = e.get("_pck", "")
                 wid = wem_id_from_filename(e.get("filename", ""))
                 if pck and wid:
-                    output.setdefault(pck, {})[wid] = "ON"
+                    prev = self.designation_meta.get(f"{pck}::{wid}", {})
+                    rec = dict(prev)
+                    rec["state"] = "ON"
+                    rec["transcription"] = e.get("transcription", "") or prev.get("transcription", "")
+                    output.setdefault(pck, {})[wid] = rec
+            # preserve previously loaded non-ON entries (review candidates)
+            for key, meta in self.designation_meta.items():
+                pck, _, wid = key.partition("::")
+                if pck and wid and isinstance(meta, dict) and not designation_is_on(meta):
+                    if wid not in output.get(pck, {}):
+                        output.setdefault(pck, {})[wid] = meta
             try:
                 Path(path).write_text(
                     json.dumps(output, indent=2, ensure_ascii=False),
@@ -665,12 +731,18 @@ def launch_gui() -> int:
                 self._log(f"[x] Could not load: {e}")
                 return
             count = 0
+            for pack, wems in data.items():
+                if not isinstance(wems, dict):
+                    continue
+                for wid, val in wems.items():
+                    if isinstance(val, dict):
+                        self.designation_meta[f"{pack}::{str(wid).lower()}"] = val
             for e in self.entries:
                 pck = e.get("_pck", "")
                 wid = wem_id_from_filename(e.get("filename", ""))
                 if pck and wid:
                     pack_data = data.get(pck, {})
-                    if isinstance(pack_data, dict) and pack_data.get(wid) == "ON":
+                    if isinstance(pack_data, dict) and designation_is_on(pack_data.get(wid)):
                         self.marked[self._key(e)] = True
                         count += 1
             self._populate(self.filtered)

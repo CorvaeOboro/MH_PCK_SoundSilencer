@@ -14,18 +14,47 @@ the default preset targets known "i cant do that" dialog .
 ![UI](docs/MH_PCK_SoundSilencer_ui.png)
 
 <table>
-<tr><th>PCK</th><th>WEM ID</th></tr>
-<tr><td><code>SFX_Cable_INT</code></td><td><code>002b709d</code></td></tr>
-<tr><td><code>SFX_CaptainAmerica_INT</code></td><td><code>00198b6b</code>, <code>00378af0</code></td></tr>
-<tr><td><code>SFX_BlackWidow_INT</code></td><td><code>001b1b71</code></td></tr>
-<tr><td><code>SFX_Colossus_INT</code></td><td><code>00236a36</code></td></tr>
-<tr><td><code>SFX_Cyclops_INT</code></td><td><code>0011a887</code></td></tr>
-<tr><td><code>SFX_Daredevil_INT</code></td><td><code>00563107</code></td></tr>
-<tr><td><code>SFX_InitialDownloadChunk_INT</code></td><td><code>04dd9f05</code>, <code>06c7aebb</code>, <code>0b71c2ba</code>, <code>0c8c5d32</code>, <code>0d0cd477</code>, <code>1275d4a2</code>, <code>114e23ff</code></td></tr>
-<tr><td><code>SFX_LukeCage_INT</code></td><td><code>002cbe60</code></td></tr>
-<tr><td><code>SFX_Psylocke_INT</code></td><td><code>002e4143</code></td></tr>
-<tr><td><code>SFX_Rogue_INT</code></td><td><code>0026680a</code></td></tr>
-<tr><td><code>SFX_SquirrelGirl_INT</code></td><td><code>002acae5</code></td></tr>
+<tr><th>PCK</th><th>Character</th><th>WEM ID</th></tr>
+<tr><td><code>SFX_Angela_INT</code></td><td>angela</td><td><code>00225854</code></td></tr>
+<tr><td><code>SFX_Beast_INT</code></td><td>beast</td><td><code>0052031e</code></td></tr>
+<tr><td><code>SFX_BlackCat_INT</code></td><td>black cat</td><td><code>0033b3ba</code></td></tr>
+<tr><td><code>SFX_BlackPanther_INT</code></td><td>black panther</td><td><code>0029d467</code></td></tr>
+<tr><td><code>SFX_BlackWidow_INT</code></td><td>black widow</td><td><code>001b1b71</code></td></tr>
+<tr><td><code>SFX_Cable_INT</code></td><td>cable</td><td><code>002b709d</code></td></tr>
+<tr><td><code>SFX_CaptainAmerica_INT</code></td><td>captain america</td><td><code>00198b6b</code>, <code>00378af0</code></td></tr>
+<tr><td><code>SFX_Colossus_INT</code></td><td>colossus</td><td><code>00236a36</code></td></tr>
+<tr><td><code>SFX_Cyclops_INT</code></td><td>cyclops</td><td><code>0011a887</code></td></tr>
+<tr><td><code>SFX_Daredevil_INT</code></td><td>daredevil</td><td><code>00563107</code>, <code>00266f8a</code></td></tr>
+<tr><td><code>SFX_DoctorStrange_INT</code></td><td>doctor strange</td><td><code>001c3f15</code></td></tr>
+<tr><td><code>SFX_DrDoom_INT</code></td><td>dr doom</td><td><code>0066552e</code></td></tr>
+<tr><td><code>SFX_Elektra_INT</code></td><td>elektra</td><td><code>0038e182</code></td></tr>
+<tr><td><code>SFX_EmmaFrost_INT</code></td><td>emma frost</td><td><code>00251cfc</code></td></tr>
+<tr><td><code>SFX_Gambit_INT</code></td><td>gambit</td><td><code>00713ca2</code></td></tr>
+<tr><td><code>SFX_Hawkeye_INT</code></td><td>hawkeye</td><td><code>001797cf</code></td></tr>
+<tr><td><code>SFX_Hulk_INT</code></td><td>hulk</td><td><code>0019719f</code></td></tr>
+<tr><td><code>SFX_Iceman_INT</code></td><td>iceman</td><td><code>003ee0fc</code></td></tr>
+<tr><td><code>SFX_InitialDownloadChunk_INT</code></td><td>multi (antman, carnage, deadpool, juggernaut, thor, wolverine + unknown)</td><td><code>04dd9f05</code>, <code>06c7aebb</code>, <code>0b71c2ba</code>, <code>0c8c5d32</code>, <code>0d0cd477</code>, <code>1275d4a2</code>, <code>114e23ff</code>, <code>05660b85</code>, <code>0cdfad9f</code>, <code>089ad5ea</code>, <code>11a8fcb3</code>, <code>126e11a1</code>, <code>0e1c9d7b</code></td></tr>
+<tr><td><code>SFX_IronFist_INT</code></td><td>iron fist</td><td><code>0046b4dd</code></td></tr>
+<tr><td><code>SFX_IronMan_INT</code></td><td>ironman</td><td><code>003aa332</code></td></tr>
+<tr><td><code>SFX_KittyPryde_INT</code></td><td>kitty pryde</td><td><code>005ec494</code></td></tr>
+<tr><td><code>SFX_Loki_INT</code></td><td>loki</td><td><code>0093268f</code>, <code>00a7788b</code>, <code>002c9a6f</code></td></tr>
+<tr><td><code>SFX_LukeCage_INT</code></td><td>luke cage</td><td><code>002cbe60</code></td></tr>
+<tr><td><code>SFX_Magneto_INT</code></td><td>magneto</td><td><code>003ac5fd</code></td></tr>
+<tr><td><code>SFX_MoonKnight_INT</code></td><td>moon knight</td><td><code>0048b890</code></td></tr>
+<tr><td><code>SFX_MsMarvel_INT</code></td><td>captain marvel</td><td><code>00350dec</code></td></tr>
+<tr><td><code>SFX_NickFury_INT</code></td><td>nick fury</td><td><code>005032dc</code></td></tr>
+<tr><td><code>SFX_Nightcrawler_INT</code></td><td>nightcrawler</td><td><code>00227212</code></td></tr>
+<tr><td><code>SFX_Psylocke_INT</code></td><td>psylocke</td><td><code>002e4143</code></td></tr>
+<tr><td><code>SFX_Rogue_INT</code></td><td>rogue</td><td><code>0026680a</code></td></tr>
+<tr><td><code>SFX_SheHulk_INT</code></td><td>she-hulk</td><td><code>0053a84a</code></td></tr>
+<tr><td><code>SFX_SquirrelGirl_INT</code></td><td>squirrel girl</td><td><code>002acae5</code></td></tr>
+<tr><td><code>SFX_Starlord_INT</code></td><td>star-lord</td><td><code>001a3c18</code></td></tr>
+<tr><td><code>SFX_Storm_INT</code></td><td>storm</td><td><code>00338bf4</code></td></tr>
+<tr><td><code>SFX_Taskmaster_INT</code></td><td>taskmaster</td><td><code>000afcab</code></td></tr>
+<tr><td><code>SFX_Ultron_INT</code></td><td>ultron</td><td><code>00161876</code></td></tr>
+<tr><td><code>SFX_Vision_INT</code></td><td>vision</td><td><code>0055406b</code></td></tr>
+<tr><td><code>SFX_WarMachine_INT</code></td><td>war machine</td><td><code>00235bb9</code></td></tr>
+<tr><td><code>SFX_WinterSoldier_INT</code></td><td>winter soldier</td><td><code>0026d84e</code></td></tr>
 </table>
 
 
